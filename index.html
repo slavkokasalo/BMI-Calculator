@@ -19,6 +19,15 @@
   <input id="inputcm" type="number" placeholder="cm" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
 </p>
 <p>Inches: <span id="outputInches"></span></p>
+            
+            <h2>Weight Converter</h2>
+<p>Type a value in the Kilograms field to convert the value to Pounds:</p>
+
+<p>
+  <label>Kilograms</label>
+  <input id="inputKilograms" type="number" placeholder="Kilograms" oninput="weightConverter(this.value)" onchange="weightConverter(this.value)">
+</p>
+<p>Pounds: <span id="outputPounds"></span></p>
 
 
             <form action="none" method="post" name="bmiform">
@@ -50,7 +59,9 @@ function calcBMI() {
  function LengthConverter(valNum) {
   document.getElementById("outputInches").innerHTML=valNum*0.39370;
 }
-    
+    function weightConverter(valNum) {
+  document.getElementById("outputPounds").innerHTML=valNum*2.2046;
+}
     </script>
     </body>
 </body>
