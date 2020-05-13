@@ -10,15 +10,16 @@
     <body>
         <div>
            
-            <p id="intro">how to convert from kilograms to pounds:YOUR WEIGHT IN KILOGRAMS / 0,45359237 </p>
-            <h2>Length Converter</h2>
-<p>Type a value in the Inches field to convert the value to cm:</p>
+           
+           <h2>Length Converter</h2>
+<p>Type a value in the cm field to convert the value to Inches:</p>
 
 <p>
-  <label>Inches</label>
-  <input id="inputInches" type="number" placeholder="Inches" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
+  <label>cm</label>
+  <input id="inputcm" type="number" placeholder="cm" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
 </p>
-<p>cm: <span id="outputcm"></span></p>
+<p>Inches: <span id="outputInches"></span></p>
+
 
             <form action="none" method="post" name="bmiform">
                 <fieldset>
@@ -46,8 +47,8 @@ function calcBMI() {
   document.bmiform.bmi.value = parseInt((weight * 703) / (height * height));
 }  
          
-         function LengthConverter(valNum) {
-  document.getElementById("outputcm").innerHTML=valNum/0.39370;
+ function LengthConverter(valNum) {
+  document.getElementById("outputInches").innerHTML=valNum*0.39370;
 }
     
     </script>
