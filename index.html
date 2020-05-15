@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,33 +11,21 @@
         <div>
            
            
-           <h2>Length Converter</h2>
-<p>Type a value in the cm field to convert the value to Inches:</p>
-
-<p>
-  <label>cm</label>
-  <input id="inputcm" type="number" placeholder="cm" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
-</p>
-<p>Inches: <span id="outputInches"></span></p>
-            
-            <h2>Weight Converter</h2>
-<p>Type a value in the Kilograms field to convert the value to Pounds:</p>
-
-<p>
-  <label>Kilograms</label>
-  <input id="inputKilograms" type="number" placeholder="Kilograms" oninput="weightConverter(this.value)" onchange="weightConverter(this.value)">
-</p>
-<p>Pounds: <span id="outputPounds"></span></p>
+          
 
 
             <form action="none" method="post" name="bmiform">
                 <fieldset>
                 <legend>Height and Weight</legend>
                     <label for="pounds">Weight (pounds):</label>
-                    <input type="text" name="pounds" id="pounds">
+                    <input type="text" name="pounds" id="pounds" class="counter" value="150">
+                    <button type="button" class="increment-btn">+</button>
+                     <button type="button" class="decrement-btn">-</button>
                     <br>
                     <label for="inches">Height (inches):</label>
-                    <input type="text" name="inches" id="inches">
+                    <input type="text" name="inches" id="inches" class="counter1" value="70">
+                    <button type="button" class="increment1-btn">+</button>
+    <button type="button" class="decrement1-btn">-</button>
                     <br>
                     <button type="button" name="calculate" value="Calculate your BMI" onclick="calcBMI()">Calculate your BMI</button>
                 </fieldset>
@@ -62,6 +50,41 @@ function calcBMI() {
     function weightConverter(valNum) {
   document.getElementById("outputPounds").innerHTML=valNum*2.2046;
 }
+
+var $button = document.querySelector('.increment-btn');
+var $counter = document.querySelector('.counter');
+
+$button.addEventListener('click', function(){
+  $counter.value = parseInt($counter.value) + 1; // `parseInt` converts the `value` from a string to a number
+}, false);
+
+var $button = document.querySelector('.decrement-btn');
+var $counter = document.querySelector('.counter');
+
+$button.addEventListener('click', function(){
+  $counter.value = parseInt($counter.value) - 1; // `parseInt` converts the `value` from a string to a number
+}, false);
+
+
+//2
+
+var $button = document.querySelector('.increment1-btn');
+var $counter1 = document.querySelector('.counter1');
+
+$button.addEventListener('click', function(){
+  $counter1.value = parseInt($counter1.value) + 1; // `parseInt` converts the `value` from a string to a number
+}, false);
+
+var $button = document.querySelector('.decrement1-btn');
+var $counter1 = document.querySelector('.counter1');
+
+$button.addEventListener('click', function(){
+  $counter1.value = parseInt($counter1.value) - 1; // `parseInt` converts the `value` from a string to a number
+}, false);
+
+
+
+
     </script>
     </body>
 </body>
